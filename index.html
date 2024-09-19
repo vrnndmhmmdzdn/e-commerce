@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Poppins;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        judul: '#1C1D1D',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav
+        class="h-14 shadow-md px-5 md:px-7 flex flex-row items-center justify-between fixed top-0 right-0 left-0 z-50 bg-white">
+        <div class="flex flex-row items-center">
+            <div class="mr-5 md:hidden cursor-pointer" onclick="toggleMenus()"><i class="ph-bold ph-list text-xl"></i>
+            </div>
+            <div class="w-28 mr-3">
+                <img src="images/logo.png" class="w-full">
+            </div>
+            <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Home</a>
+            <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Recommendations</a>
+        </div>
+        <div class="space-x-2 flex items-center">
+            <a class="py-2 px-3 bg-[#EAFFEA] hover:bg-[#cdffcd] rounded-full"><i
+                    class="ph-bold ph-magnifying-glass text-[#00880D] text-base"></i></a>
+            <a
+                class="py-2 px-4 rounded-full bg-[#EAFFEA] text-[#00880D] hover:bg-[#cdffcd] font-semibold text-base hidden md:block">Login/Sign
+                Up</a>
+        </div>
+    </nav>
+    <section class="h-screen px-2 pt-16">
+        <div class="w-full overflow-hidden flex flex-col justify-center items-center">
+            <div class="w-full h-96 md:h-[424px] lg:h-[464px] rounded-3xl overflow-hidden">
+                <img src="images/iklan-landing-page.jpeg" class="w-full h-full bg-center object-cover">
+            </div>
+            <div class="p-4 md:p-6 lg:p-8 rounded-2xl bg-white relative -top-20 shadow-xl">
+                <div>
+                    <p class="text-xs lg:text-sm font-normal lg:font-semibold mb-2">Your Location</p>
+                    <div class="flex gap-4 flex-col md:flex-row">
+                        <div class="relative flex flex-row w-96 lg:w-80">
+                            <div class="h-full absolute flex items-center left-0"><i
+                                    class="ph-fill ph-map-pin m-auto text-xl px-4 text-red-600"></i></div>
+                            <input type="text"
+                                class="py-3 px-12 w-full border border-gray-400 rounded-full text-sm lg:text-base"
+                                placeholder="Kamu Lagi Dimana?">
+                            <div class="h-full absolute flex items-center right-0"><i
+                                    class="ph-fill ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div>
+                        </div>
+                        <div
+                            class="bg-[#00880D] py-2 px-4 rounded-full text-white text-base flex items-center justify-center">
+                            <a href="" class="font-semibold">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container h-fit px-6 my-4 md:my-8 mx-auto">
+        <section class="py-4 md:py-6 w-full h-fit mx-auto flex flex-col justify-center">
+            <div class="text-left md:text-center">
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-medium md:font-semibold">Looking for inspo? Start here
+                </h1>
+            </div>
+            <div class="my-6 md:my-8 w-full lg:px-4 h-fit flex flex-col justify-center">
+                <div class="grid grid-cols-3 w-full h-fit md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                    <div class="card w-full flex flex-col justify-center gap-3">
+                        <div
+                            class="inner-card shadow border flex flex-col justify-center items-center rounded-2xl aspect-square gap-5">
+                            <div class="w-fit h-fit flex justify-center items-center ">
+                                <img src="images/locationicon.png" class="w-full h-full">
+                            </div>
+                            <div class="text-center hidden md:flex">
+                                <h3 class="md:text-xs lg:text-sm font-medium">Near Me</h3>
+                            </div>
+                        </div>
+                        <div class="text-center flex justify-center items-center md:hidden">
+                            <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-6 w-full mx-auto flex flex-col justify-center">
+            <div class="text-left md:text-center mt-12 mb-6">
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-medium md:font-semibold">
+                    Choose from cuisines
+                </h1>
+            </div>
+            <div class="my-6 px-4 flex flex-col justify-center">
+                <div class="grid-container grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hide-card flex flex-col justify-center items-center md:hover:shadow-2xl rounded-2xl p-2 md:hover:-translate-y-1 transition duration-300">
+                        <div class="image w-fit mb-5">
+                            <img src="images/menu-makanan.jpg" class="w-full rounded-full">
+                        </div>
+                        <div class="w-full text-center">
+                            <h3 class="text-xs md:text-sm lg:text-base font-medium">Near Me</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center w-full">
+                <div id="showmore"
+                    class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 mx-auto rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd]">
+                    Show more cuisines
+                </div>
+            </div>
+        </section>
+
+        <section class="py-4 md:py-6 w-full h-fit mx-auto flex flex-col justify-center">
+            <div class="text-left md:text-center mt-12 mb-6">
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-medium md:font-semibold">What's good to eat in Magelang?
+                </h1>
+                <h1
+                    class="text-xs md:text-sm lg:text-base font-normal md:max-w-[477px] lg:max-w-[520px] mx-auto text-left md:text-center mt-4">
+                    Discover our collection of popular dishes, local favorites, and best deals in your neighborhood.
+                </h1>
+            </div>
+            <div class="my-6 md:my-8 w-full h-fit flex flex-col justify-center">
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card ">
+                        <div
+                            class="w-full h-full flex flex-row lg:flex-col justify-start py-2 pl-2 lg:pr-2 pr-6 bg-red-400">
+                            <div
+                                class="flex justify-center items-center w-32 h-40 md:w-full md:h-56 overflow-hidden rounded-xl">
+                                <img src="images/makanan.jpg" class="w-full">
+                            </div>
+                            <div class="bg-white py-3 px-2">
+                                <h3 class="text-base font-semibold">Olive Fried Chicken</h3>
+                                <h6 class="text-sm font-light">Ayam Goreng</h6>
+                                <div class="flex justify-end gap-2 bg-blue-400">
+                                    <i class="ph-fill ph-map-pin text-base text-red-600"></i>
+                                    <span>0.11 km</span>
+                                    <span>|</span>
+                                    <span>$$$$</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const gridContainer = document.querySelector('.grid-container');
+            const gridItems = document.querySelectorAll('.grid-container .hide-card');
+
+            // nyari jumlah kolom
+            const gridComputedStyle = window.getComputedStyle(gridContainer);
+            const gridColumns = gridComputedStyle.getPropertyValue('grid-template-columns').split(' ').length;
+
+            // menyembunyikan item di baris ke 2 / >
+            gridItems.forEach((item, index) => {
+                if (index >= gridColumns) {
+                    item.style.display = 'none';
+                }
+            });
+
+            // nampilin semua item
+            const buttonShow = document.getElementById('showmore');
+            buttonShow.addEventListener('click', () => {
+                gridItems.forEach(item => {
+                    item.style.display = 'flex';
+                });
+                buttonShow.classList.add('hidden');
+                buttonShow.classList.remove('flex');
+            });
+        </script>
+    </div>
+</body>
+
+</html>
