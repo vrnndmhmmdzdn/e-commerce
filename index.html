@@ -40,7 +40,8 @@
             <div class="w-28 mr-3">
                 <img src="images/logo.png" class="w-full">
             </div>
-            <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Home</a>
+            <a
+                class="py-4 px-8 text-base font-semibold text-judul hidden md:block relative before:absolute before:h-1 before:bg-[#E52535] before:w-full before:bottom-0 before:left-0">Home</a>
             <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Recommendations</a>
         </div>
         <div class="space-x-2 flex items-center">
@@ -770,13 +771,47 @@
             <div class="my-6 md:my-8 w-full lg:px-4 h-fit flex flex-col justify-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                    <div class="card w-full flex flex-col justify-center gap-3 p-3 bg-pink-300 rounded-3xl">
-                        <div class="w-full">
-                            <div class="w-1/2 lg:w-full rounded-3xl overflow-hidden">
+                    <div class="card w-full px-3 lg:py-3 bg-gradient-to-r from-purple-600 to-purple-400 rounded-3xl">
+                        <div class="w-full flex flex-row lg:flex-col items-center gap-3 md:gap-4 justify-center py-6">
+                            <div class="w-1/2 lg:w-full h-full rounded-3xl overflow-hidden">
                                 <img src="images/ilustrasi.jpeg" class="w-full h-full">
                             </div>
-                            <div class="text-center flex justify-center items-center">
-                                <h3 class="text-xs font-normal md:text-sm md:font-medium">Near Me</h3>
+                            <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">
+                                    Countless reviews to go by</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card w-full px-3 lg:py-3 bg-gradient-to-r from-sky-600 to-sky-400 rounded-3xl">
+                        <div class="w-full flex flex-row lg:flex-col items-center gap-3 md:gap-4 justify-center py-6">
+                            <div class="w-1/2 lg:w-full h-full rounded-3xl overflow-hidden">
+                                <img src="images/ilustrasi.jpeg" class="w-full h-full">
+                            </div>
+                            <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">
+                                    Delivery or pick up from the resto</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card w-full px-3 lg:py-3 bg-gradient-to-r from-pink-600 to-pink-400 rounded-3xl">
+                        <div class="w-full flex flex-row lg:flex-col items-center gap-3 md:gap-4 justify-center py-6">
+                            <div class="w-1/2 lg:w-full h-full rounded-3xl overflow-hidden">
+                                <img src="images/ilustrasi.jpeg" class="w-full h-full">
+                            </div>
+                            <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">Big
+                                    deals on all cuisines</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card w-full px-3 lg:py-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-3xl">
+                        <div class="w-full flex flex-row lg:flex-col items-center gap-3 md:gap-4 justify-center py-6">
+                            <div class="w-1/2 lg:w-full h-full rounded-3xl overflow-hidden">
+                                <img src="images/ilustrasi.jpeg" class="w-full h-full">
+                            </div>
+                            <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">Quick &
+                                    safe delivery</h3>
                             </div>
                         </div>
                     </div>
@@ -785,7 +820,113 @@
             </div>
         </section>
 
+        <section class="py-6 w-full mx-auto flex flex-col justify-center">
+            <div class="text-left md:text-center mt-12 mb-6">
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-medium md:font-semibold">
+                    Cities with GoFood
+                </h1>
+            </div>
+            <div class="my-6 px-4 flex flex-col justify-center">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+                    <div class="">
+                        <a
+                            class="rounded-full py-2 px-4 border  bg-white hover:bg-gray-100 transition text-xs md:text-sm lg:text-base font-semibold text-[#00880D] cursor-pointer duration-300 w-fit">
+                            Jakarta
+                        </a>
+                    </div>
+
+                    <div class="">
+                        <a
+                            class="rounded-full py-2 px-4 border  bg-white hover:bg-gray-100 transition text-xs md:text-sm lg:text-base font-semibold text-[#00880D] cursor-pointer duration-300 w-fit">
+                            Bandung
+                        </a>
+                    </div>
+
+                    <div class="">
+                        <a
+                            class="rounded-full py-2 px-4 border  bg-white hover:bg-gray-100 transition text-xs md:text-sm lg:text-base font-semibold text-[#00880D] cursor-pointer duration-300 w-fit">
+                            Semarang
+                        </a>
+                    </div>
+
+                    <div class="">
+                        <a
+                            class="rounded-full py-2 px-4 border  bg-white hover:bg-gray-100 transition text-xs md:text-sm lg:text-base font-semibold text-[#00880D] cursor-pointer duration-300 w-fit">
+                            Yogyakarta
+                        </a>
+                    </div>
+
+                    <div class="">
+                        <a
+                            class="rounded-full py-2 px-4 border  bg-white hover:bg-gray-100 transition text-xs md:text-sm lg:text-base font-semibold text-[#00880D] cursor-pointer duration-300 w-fit">
+                            Solo
+                        </a>
+                    </div>
+
+                    <div class="">
+                        <a
+                            class="rounded-full py-2 px-4 border  bg-white hover:bg-gray-100 transition text-xs md:text-sm lg:text-base font-semibold text-[#00880D] cursor-pointer duration-300 w-fit">
+                            Surabaya
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="#"
+                class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 mx-auto rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd]">
+                Show all cities
+            </a>
+        </section>
     </div>
+    <footer class="py-16 px-6 bg-[#E52535]">
+        <div class="flex flex-wrap max-w-5xl mx-auto text-white justify-between bg-blue-400">
+            <div class="md:w-1/2 lg:w-3/5 h-fit bg-yellow-400">
+                <div class="w-28"><img src="images/logo.png" class="w-full"></div>
+                <p class="py-5 text-lg md:text-xl lg:text-2xl font-semibold">It's like having the intire neighborhood's
+                    kitchen in
+                    your pocket</p>
+                <p class="text-base pt-3 pb-8 font-light">Enjoy a large variety of meals, deals, and member-only
+                    features in GoFood
+                    app.</p>
+                <div class="flex flex-row gap-4">
+                    <div class="w-56 rounded-xl overflow-hidden border"><img src="images/play-store.jpeg" class=w-full">
+                    </div>
+                    <div class="w-56 rounded-xl overflow-hidden border"><img src="images/app-store.jpeg" class="w-full">
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-[400px] md:w-[255px] lg:w-[350px] bg-purple-400">
+                <img src="images/mockup-gf.png" class="w-full h-auto">
+            </div>
+            <div class="md:w-1/2 lg:w-3/5 bg-orange-400">
+                <div class="relative flex flex-row max-w-[400px] md:w-[300px] lg:w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-translate m-auto text-xl px-4 text-red-600"></i></div>
+                    <select
+                        class="py-2 px-11 w-full border rounded-full text-sm text-slate-400 font-light lg:text-base ">
+                        <option value="indonesia">Bahasa Indonesia</option>
+                        <option value="english">English</option>
+                    </select>
+                    <!-- <div class="h-full absolute flex items-center right-0"><i
+                            class="ph-fill ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div> -->
+                </div>
+                <div class="w-full flex flex-wrap mt-8 gap-y-6 gap-x-8 lg:gap-x-16 text-base font-medium">
+                    <a href="">Pivacy policy</a>
+                    <a href="">Terms of service</a>
+                    <a href="" class="flex space-x-2"><span>Follow us</span><i
+                            class="ph ph-instagram-logo text-2xl -mt-1"></i></a>
+                </div>
+                <div class="w-full mt-6">
+                    <p class="text-sm font-light">&copy; 2024 Gojek | Gojek is a trademark of PT Aplikasi Karya Anak
+                        Bangsa.
+                        Registered in the
+                        Directorate General of
+                        Intellectual Property of the Republic of Indonesia.</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
     <script>
         const gridContainer = document.querySelector('.grid-container');
         const gridItems = document.querySelectorAll('.grid-container .hide-card');
