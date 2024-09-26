@@ -35,8 +35,8 @@
     <nav
         class="h-14 shadow-md px-5 md:px-7 flex flex-row items-center justify-between fixed top-0 right-0 left-0 z-50 bg-white">
         <div class="flex flex-row items-center">
-            <div class="mr-5 md:hidden cursor-pointer" onclick="toggleMenus()"><i class="ph-bold ph-list text-xl"></i>
-            </div>
+            <button class="mr-5 md:hidden cursor-pointer" onclick="openMenu()"><i class="ph-bold ph-list text-xl"></i>
+            </button>
             <div class="w-28 mr-3">
                 <img src="images/logo.png" class="w-full">
             </div>
@@ -52,6 +52,24 @@
                 Up</a>
         </div>
     </nav>
+    <div id="toggle-menu"
+        class="flex md:hidden w-full h-full fixed top-0 left-0 bg-white z-50 py-12 px-8 -translate-x-full transition duration-500 opacity-50">
+        <div class="relative">
+            <span onclick="closeMenu()" class="absolute top-0 -right-3/4 cursor-pointer"><i
+                    class="ph ph-x text-2xl font-semibold text-gray-400"></i></span>
+            <div class="w-28">
+                <img src="images/logo.png" class="w-full">
+            </div>
+            <div class="text-[#00880D] w-full font-semibold text-lg flex flex-col mt-12">
+                <a href="#" class="py-2 px-3 w-full">Home</a>
+                <a href="#" class="py-2 px-3 w-full">Recommendations</a>
+                <a href="#" class="py-2 px-3 w-full">Privacy policy</a>
+                <a href="#" class="py-2 px-3 w-full">Terms of service</a>
+                <a href="#" class="py-2 px-3 w-full">Download on App Store</a>
+                <a href="#" class="py-2 px-3 w-full">Log in/Sign up</a>
+            </div>
+        </div>
+    </div>
     <section class="h-screen px-2 pt-16">
         <div class="w-full overflow-hidden flex flex-col justify-center items-center">
             <div class="w-full h-96 md:h-[424px] lg:h-[464px] rounded-3xl overflow-hidden">
@@ -777,7 +795,7 @@
                                 <img src="images/ilustrasi.jpeg" class="w-full h-full">
                             </div>
                             <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
-                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-white">
                                     Countless reviews to go by</h3>
                             </div>
                         </div>
@@ -788,7 +806,7 @@
                                 <img src="images/ilustrasi.jpeg" class="w-full h-full">
                             </div>
                             <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
-                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-white">
                                     Delivery or pick up from the resto</h3>
                             </div>
                         </div>
@@ -799,7 +817,7 @@
                                 <img src="images/ilustrasi.jpeg" class="w-full h-full">
                             </div>
                             <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
-                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">Big
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-white">Big
                                     deals on all cuisines</h3>
                             </div>
                         </div>
@@ -810,7 +828,7 @@
                                 <img src="images/ilustrasi.jpeg" class="w-full h-full">
                             </div>
                             <div class="w-1/2 lg:w-full lg:mt-12 lg:mb-4 h-fit text-left px-2 lg:px-5">
-                                <h3 class="text-lg md:text-xl lg:text-2xl font-normal md:font-medium text-white">Quick &
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-white">Quick &
                                     safe delivery</h3>
                             </div>
                         </div>
@@ -873,32 +891,35 @@
                 </div>
             </div>
             <a href="#"
-                class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 mx-auto rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd]">
+                class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 mx-auto rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
                 Show all cities
             </a>
         </section>
     </div>
-    <footer class="py-16 px-6 bg-[#E52535]">
-        <div class="flex flex-wrap max-w-5xl mx-auto text-white justify-between bg-blue-400">
-            <div class="md:w-1/2 lg:w-3/5 h-fit bg-yellow-400">
-                <div class="w-28"><img src="images/logo.png" class="w-full"></div>
+    <footer class="py-12 lg:py-16 px-6 bg-[#E52535]">
+        <div class="flex flex-wrap relative max-w-5xl mx-auto text-white justify-center gap-12 md:justify-between">
+            <div class="w-full md:w-1/2 lg:w-3/5 h-fit ">
+                <div class="w-40"><img src="images/gofood-white.png" class="w-full"></div>
                 <p class="py-5 text-lg md:text-xl lg:text-2xl font-semibold">It's like having the intire neighborhood's
                     kitchen in
                     your pocket</p>
-                <p class="text-base pt-3 pb-8 font-light">Enjoy a large variety of meals, deals, and member-only
+                <p class="text-sm lg:text-base pt-3 pb-8 font-light">Enjoy a large variety of meals, deals, and
+                    member-only
                     features in GoFood
                     app.</p>
                 <div class="flex flex-row gap-4">
-                    <div class="w-56 rounded-xl overflow-hidden border"><img src="images/play-store.jpeg" class=w-full">
+                    <div class="w-36 lg:w-56 rounded lg:rounded-xl overflow-hidden border"><img
+                            src="images/play-store.jpeg" class=w-full">
                     </div>
-                    <div class="w-56 rounded-xl overflow-hidden border"><img src="images/app-store.jpeg" class="w-full">
+                    <div class="w-36 lg:w-56 rounded lg:rounded-xl overflow-hidden border"><img
+                            src="images/app-store.jpeg" class="w-full">
                     </div>
                 </div>
             </div>
-            <div class="max-w-[400px] md:w-[255px] lg:w-[350px] bg-purple-400">
+            <div class="max-w-[400px] md:w-[255px] lg:w-[350px] ">
                 <img src="images/mockup-gf.png" class="w-full h-auto">
             </div>
-            <div class="md:w-1/2 lg:w-3/5 bg-orange-400">
+            <div class="md:absolute md:bottom-0 md:w-1/2 lg:w-3/5 ">
                 <div class="relative flex flex-row max-w-[400px] md:w-[300px] lg:w-80">
                     <div class="h-full absolute flex items-center left-0"><i
                             class="ph-fill ph-translate m-auto text-xl px-4 text-red-600"></i></div>
@@ -928,6 +949,25 @@
         </div>
     </footer>
     <script>
+        var toggleMenu = document.getElementById('toggle-menu');
+
+        function openMenu() {
+            toggleMenu.classList.remove('-translate-x-full');
+            toggleMenu.classList.add('translate-x-0');
+            toggleMenu.classList.remove('opacity-50');
+            toggleMenu.classList.add('opacity-100');
+        };
+        function closeMenu() {
+            toggleMenu.classList.add('-translate-x-full');
+            toggleMenu.classList.remove('translate-x-0');
+            toggleMenu.classList.add('opacity-50');
+            toggleMenu.classList.remove('opacity-100');
+        };
+
+
+
+
+
         const gridContainer = document.querySelector('.grid-container');
         const gridItems = document.querySelectorAll('.grid-container .hide-card');
 

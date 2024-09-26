@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        judul: '#1C1D1D',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav
+        class="h-14 shadow-md px-5 md:px-7 flex flex-row items-center justify-between fixed top-0 right-0 left-0 z-50 bg-white">
+        <div class="flex flex-row items-center">
+            <button class="mr-5 md:hidden cursor-pointer" onclick="openMenu()"><i class="ph-bold ph-list text-xl"></i>
+            </button>
+            <div class="w-28 mr-3">
+                <img src="images/logo.png" class="w-full">
+            </div>
+            <a
+                class="py-4 px-8 text-base font-semibold text-judul hidden md:block relative before:absolute before:h-1 before:bg-[#E52535] before:w-full before:bottom-0 before:left-0">Home</a>
+            <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Recommendations</a>
+        </div>
+        <div class="space-x-2 flex items-center">
+            <a class="py-2 px-3 bg-[#EAFFEA] hover:bg-[#cdffcd] rounded-full"><i
+                    class="ph-bold ph-magnifying-glass text-[#00880D] text-base"></i></a>
+            <a
+                class="py-2 px-4 rounded-full bg-[#EAFFEA] text-[#00880D] hover:bg-[#cdffcd] font-semibold text-base hidden md:block">Login/Sign
+                Up</a>
+        </div>
+    </nav>
+    <div id="toggle-menu"
+        class="flex md:hidden w-full h-full fixed top-0 left-0 bg-white z-50 py-12 px-8 -translate-x-full transition duration-500 opacity-50">
+        <div class="relative">
+            <span onclick="closeMenu()" class="absolute top-0 -right-3/4 cursor-pointer"><i
+                    class="ph ph-x text-2xl font-semibold text-gray-400"></i></span>
+            <div class="w-28">
+                <img src="images/logo.png" class="w-full">
+            </div>
+            <div class="text-[#00880D] w-full font-semibold text-lg flex flex-col mt-12">
+                <a href="#" class="py-2 px-3 w-full">Home</a>
+                <a href="#" class="py-2 px-3 w-full">Recommendations</a>
+                <a href="#" class="py-2 px-3 w-full">Privacy policy</a>
+                <a href="#" class="py-2 px-3 w-full">Terms of service</a>
+                <a href="#" class="py-2 px-3 w-full">Download on App Store</a>
+                <a href="#" class="py-2 px-3 w-full">Log in/Sign up</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="mt-16">
+        <div class="pt-6 px-16">
+            <div class="w-full flex flex-row gap-3 text-sm text-gray-700">
+                <a href="#">Home</a>
+                <span>/</span>
+                <a href="#">Purworejo</a>
+                <span>/</span>
+                <a href="#">Olive fried chicken</a>
+            </div>
+            <div class="flex flex-row gap-4 mt-6">
+                <div class="w-16 md:w-24 overflow-hidden rounded-2xl aspect-square border-2">
+                    <img src="images/product.jpeg" class="w-full">
+                </div>
+                <div class="mr-4 flex flex-row gap-4 py-2">
+                    <div class="flex flex-col gap-3">
+                        <h2 class="text-2xl font-semibold">Olive fried chicken</h2>
+                        <div class="flex items-center gap-2">
+                            <div class="w-11 md:w-16 rounded-full overflow-hidden">
+                                <img src="images/plus.png" class="w-full">
+                            </div>
+                            <p class="text-lg text-gray-700">Western</p>
+                        </div>
+                    </div>
+                    <div class="h-full flex items-center justify-center">
+                        <span><i class="ph ph-caret-right text-xl font-semibold"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-[#FAFAFA] mt-6 h-24 py-4 flex flex-row items-center">
+                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                    <div class="flex items-center gap-2 justify-center">
+                        <span><i class="ph-fill ph-star text-yellow-400 text-2xl"></i></span>
+                        <span class="text-lg font-semibold">4.4</span>
+                    </div>
+                    <div>
+                        <p class="text-[#00880D] text-base font-bold text-center">See reviews</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                    <div class="flex items-center gap-1 justify-center">
+                        <span><i class="ph-fill ph-map-pin text-[#E52535] text-xl"></i></span>
+                        <span class="text-lg font-semibold">0.6 km</span>
+                    </div>
+                    <div>
+                        <p class="text-[#00880D] text-base font-bold text-center">distance</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                    <div class="flex items-center justify-center">
+                        <span class="text-lg font-semibold">$$$</span>
+                        <span class="text-lg font-semibold text-gray-500">$</span>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 text-base font-normal text-center">40k-100k</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                    <div class="flex items-center gap-2 justify-center">
+                        <span><i class="ph-fill ph-thumbs-up text-[#E52535] text-2xl"></i></span>
+                        <span class="text-lg font-semibold">50+ ratings</span>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 text-base font-normal text-center">Great taste</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                    <div class="flex items-center gap-2 justify-center">
+                        <span><i class="ph-fill ph-backpack text-[#E52535] text-2xl"></i></span>
+                        <span class="text-lg font-semibold">50+ ratings</span>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 text-base font-normal text-center">Proper packaging</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center h-full px-5 w-fit">
+                    <div class="flex items-center gap-2 justify-center">
+                        <span><i class="ph-fill ph-hamburger text-[#E52535] text-2xl"></i></span>
+                        <span class="text-lg font-semibold">50+ ratings</span>
+                    </div>
+                    <div>
+                        <p class="text-gray-700 text-base font-normal text-center">Fair portion</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-6 px-6">
+        <div class="max-w-[1200px] mx-auto">
+            <h2 class="text-xl md:text-2xl text-gray-800 text-left font-semibold">Recommended
+            </h2>
+            <div class="mt-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:p-2 md:rounded-2xl">
+                        <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
+                            <img src="images/product.jpeg" class="w-full">
+                        </div>
+                        <div class="px-2 mt-4 mb-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
+                                <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
+                            </div>
+                            <div
+                                class="w-full hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-6 px-6">
+        <div class="max-w-[1200px] mx-auto">
+            <h2 class="text-xl md:text-2xl text-gray-800 text-left font-semibold">Menus
+            </h2>
+            <div class="mt-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                        <div class="px-2">
+                            <div class="">
+                                <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
+                                <p class="text-gray-800 text-base font-light mt-3">50.000</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-28 lg:w-[120px] h-28 lg:h-[120px] overflow-hidden rounded-2xl">
+                                <img src="images/product.jpeg" class="w-full">
+                            </div>
+                            <div
+                                class="w-28 lg:w-32 hover:bg-[#EAFFEA] py-1 lg:py-2 rounded-full mt-3 border border-[#00880D] text-[#00880D] text-sm lg:text-base font-medium lg:font-bold text-center">
+                                <span>Add</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 lg:py-16 px-6 bg-[#E52535]">
+        <div class="flex flex-wrap relative max-w-5xl mx-auto text-white justify-center gap-12 md:justify-between">
+            <div class="w-full md:w-1/2 lg:w-3/5 h-fit ">
+                <div class="w-40"><img src="images/gofood-white.png" class="w-full"></div>
+                <p class="py-5 text-lg md:text-xl lg:text-2xl font-semibold">It's like having the intire neighborhood's
+                    kitchen in
+                    your pocket</p>
+                <p class="text-sm lg:text-base pt-3 pb-8 font-light">Enjoy a large variety of meals, deals, and
+                    member-only
+                    features in GoFood
+                    app.</p>
+                <div class="flex flex-row gap-4">
+                    <div class="w-36 lg:w-56 rounded lg:rounded-xl overflow-hidden border"><img
+                            src="images/play-store.jpeg" class=w-full">
+                    </div>
+                    <div class="w-36 lg:w-56 rounded lg:rounded-xl overflow-hidden border"><img
+                            src="images/app-store.jpeg" class="w-full">
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-[400px] md:w-[255px] lg:w-[350px] ">
+                <img src="images/mockup-gf.png" class="w-full h-auto">
+            </div>
+            <div class="md:absolute md:bottom-0 md:w-1/2 lg:w-3/5 ">
+                <div class="relative flex flex-row max-w-[400px] md:w-[300px] lg:w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-translate m-auto text-xl px-4 text-red-600"></i></div>
+                    <select
+                        class="py-2 px-11 w-full border rounded-full text-sm text-slate-400 font-light lg:text-base ">
+                        <option value="indonesia">Bahasa Indonesia</option>
+                        <option value="english">English</option>
+                    </select>
+                    <!-- <div class="h-full absolute flex items-center right-0"><i
+                                class="ph-fill ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div> -->
+                </div>
+                <div class="w-full flex flex-wrap mt-8 gap-y-6 gap-x-8 lg:gap-x-16 text-base font-medium">
+                    <a href="">Pivacy policy</a>
+                    <a href="">Terms of service</a>
+                    <a href="" class="flex space-x-2"><span>Follow us</span><i
+                            class="ph ph-instagram-logo text-2xl -mt-1"></i></a>
+                </div>
+                <div class="w-full mt-6">
+                    <p class="text-sm font-light">&copy; 2024 Gojek | Gojek is a trademark of PT Aplikasi Karya Anak
+                        Bangsa.
+                        Registered in the
+                        Directorate General of
+                        Intellectual Property of the Republic of Indonesia.</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
