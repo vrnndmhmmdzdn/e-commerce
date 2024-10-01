@@ -27,24 +27,50 @@
 </head>
 
 <body>
-    <nav
-        class="h-14 shadow-md px-5 md:px-7 flex flex-row items-center justify-between fixed top-0 right-0 left-0 z-50 bg-white">
-        <div class="flex flex-row items-center">
-            <button class="mr-5 md:hidden cursor-pointer" onclick="openMenu()"><i class="ph-bold ph-list text-xl"></i>
-            </button>
-            <div class="w-28 mr-3">
-                <img src="images/logo.png" class="w-full">
+    <nav class="fixed top-0 right-0 left-0 z-50 bg-[#FAFAFA]">
+        <div class="h-14 border-b px-5 md:px-7 flex flex-row items-center justify-between">
+            <div class="flex flex-row items-center">
+                <button class="mr-5 md:hidden cursor-pointer" onclick="openMenu()"><i
+                        class="ph-bold ph-list text-xl"></i>
+                </button>
+                <div class="w-28 mr-3">
+                    <img src="images/logo.png" class="w-full">
+                </div>
+                <a
+                    class="py-4 px-8 text-base font-semibold text-judul hidden md:block relative before:absolute before:h-1 before:bg-[#E52535] before:w-full before:bottom-0 before:left-0">Home</a>
+                <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Recommendations</a>
             </div>
-            <a
-                class="py-4 px-8 text-base font-semibold text-judul hidden md:block relative before:absolute before:h-1 before:bg-[#E52535] before:w-full before:bottom-0 before:left-0">Home</a>
-            <a class="py-4 px-8 text-base font-semibold text-judul hidden md:block">Recommendations</a>
+            <div class="space-x-2 lg:space-x-3 flex items-center">
+                <a class="py-2 px-3 w-fit bg-[#EAFFEA] hover:bg-[#cdffcd] rounded-full"><i
+                        class="ph-bold ph-magnifying-glass text-[#00880D] text-base"></i></a>
+                <div class="relative hidden lg:flex flex-row w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-map-pin m-auto text-xl px-4 text-red-600"></i></div>
+                    <input type="text" class="py-1.5 px-12 w-full border border-gray-400 rounded-full text-sm"
+                        placeholder="Kamu Lagi Dimana?">
+                    <div class="h-full absolute flex items-center right-0"><i
+                            class="ph ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div>
+                </div>
+                <a
+                    class="py-2 w-fit px-4 rounded-full bg-[#EAFFEA] text-[#00880D] hover:bg-[#cdffcd] font-semibold text-base hidden md:block">Login/Sign
+                    Up</a>
+            </div>
         </div>
-        <div class="space-x-2 flex items-center">
-            <a class="py-2 px-3 bg-[#EAFFEA] hover:bg-[#cdffcd] rounded-full"><i
-                    class="ph-bold ph-magnifying-glass text-[#00880D] text-base"></i></a>
-            <a
-                class="py-2 px-4 rounded-full bg-[#EAFFEA] text-[#00880D] hover:bg-[#cdffcd] font-semibold text-base hidden md:block">Login/Sign
-                Up</a>
+        <div class="h-14 px-5 md:px-7 flex flex-row items-center justify-between lg:hidden">
+            <div class="w-full flex flex-row justify-between items-center">
+                <p class="hidden md:block text-sm font-normal text-gray-500">Curious what's in other locations? Change
+                    it
+                    up.</p>
+                <div class="relative flex flex-row w-full md:w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-map-pin m-auto text-xl px-4 text-red-600"></i></div>
+                    <input type="text"
+                        class="py-1.5 px-12 w-full border border-gray-400 rounded-full text-sm lg:text-base"
+                        placeholder="Kamu Lagi Dimana?">
+                    <div class="h-full absolute flex items-center right-0"><i
+                            class="ph ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div>
+                </div>
+            </div>
         </div>
     </nav>
     <div id="toggle-menu"
@@ -65,92 +91,99 @@
             </div>
         </div>
     </div>
-
-
     <section class="mt-16">
-        <div class="pt-6 px-16">
-            <div class="w-full flex flex-row gap-3 text-sm text-gray-700">
-                <a href="#">Home</a>
-                <span>/</span>
-                <a href="#">Purworejo</a>
-                <span>/</span>
-                <a href="#">Olive fried chicken</a>
-            </div>
-            <div class="flex flex-row gap-4 mt-6">
-                <div class="w-16 md:w-24 overflow-hidden rounded-2xl aspect-square border-2">
-                    <img src="images/product.jpeg" class="w-full">
+        <div class="px-6">
+            <div class="pt-6 max-w-[1200px] mx-auto">
+                <div class="w-full hidden md:flex flex-row gap-3 text-sm text-gray-700">
+                    <a href="#">Home</a>
+                    <span>/</span>
+                    <a href="#">Purworejo</a>
+                    <span>/</span>
+                    <a href="#">Olive fried chicken</a>
                 </div>
-                <div class="mr-4 flex flex-row gap-4 py-2">
-                    <div class="flex flex-col gap-3">
-                        <h2 class="text-2xl font-semibold">Olive fried chicken</h2>
-                        <div class="flex items-center gap-2">
-                            <div class="w-11 md:w-16 rounded-full overflow-hidden">
-                                <img src="images/plus.png" class="w-full">
+                <div class="flex flex-row items-center gap-4 md:mt-6">
+                    <div class="w-16 h-16 md:w-24 md:h-24 overflow-hidden rounded-2xl aspect-square border-2">
+                        <img src="images/product.jpeg" class="w-full">
+                    </div>
+                    <div class="mr-4 flex flex-row gap-4 md:py-2 items-center">
+                        <div class="flex flex-col items-start gap-2 md:gap-3">
+                            <h2 class="text-[22px] md:text-2xl font-semibold">Olive fried chicken</h2>
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 rounded-full overflow-hidden">
+                                    <img src="images/plus.png" class="w-full">
+                                </div>
+                                <p class="text-base md:text-lg text-gray-700">Western</p>
                             </div>
-                            <p class="text-lg text-gray-700">Western</p>
+                        </div>
+                        <div class="h-full flex items-center justify-center">
+                            <span><i class="ph ph-caret-right text-xl font-semibold"></i></span>
                         </div>
                     </div>
-                    <div class="h-full flex items-center justify-center">
-                        <span><i class="ph ph-caret-right text-xl font-semibold"></i></span>
-                    </div>
                 </div>
             </div>
-            <div class="w-full bg-[#FAFAFA] mt-6 h-24 py-4 flex flex-row items-center">
-                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
-                    <div class="flex items-center gap-2 justify-center">
-                        <span><i class="ph-fill ph-star text-yellow-400 text-2xl"></i></span>
-                        <span class="text-lg font-semibold">4.4</span>
-                    </div>
-                    <div>
-                        <p class="text-[#00880D] text-base font-bold text-center">See reviews</p>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
-                    <div class="flex items-center gap-1 justify-center">
-                        <span><i class="ph-fill ph-map-pin text-[#E52535] text-xl"></i></span>
-                        <span class="text-lg font-semibold">0.6 km</span>
-                    </div>
-                    <div>
-                        <p class="text-[#00880D] text-base font-bold text-center">distance</p>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
-                    <div class="flex items-center justify-center">
-                        <span class="text-lg font-semibold">$$$</span>
-                        <span class="text-lg font-semibold text-gray-500">$</span>
-                    </div>
-                    <div>
-                        <p class="text-gray-700 text-base font-normal text-center">40k-100k</p>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
-                    <div class="flex items-center gap-2 justify-center">
-                        <span><i class="ph-fill ph-thumbs-up text-[#E52535] text-2xl"></i></span>
-                        <span class="text-lg font-semibold">50+ ratings</span>
-                    </div>
-                    <div>
-                        <p class="text-gray-700 text-base font-normal text-center">Great taste</p>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
-                    <div class="flex items-center gap-2 justify-center">
-                        <span><i class="ph-fill ph-backpack text-[#E52535] text-2xl"></i></span>
-                        <span class="text-lg font-semibold">50+ ratings</span>
-                    </div>
-                    <div>
-                        <p class="text-gray-700 text-base font-normal text-center">Proper packaging</p>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center h-full px-5 w-fit">
-                    <div class="flex items-center gap-2 justify-center">
-                        <span><i class="ph-fill ph-hamburger text-[#E52535] text-2xl"></i></span>
-                        <span class="text-lg font-semibold">50+ ratings</span>
-                    </div>
-                    <div>
-                        <p class="text-gray-700 text-base font-normal text-center">Fair portion</p>
-                    </div>
-                </div>
+        </div>
+        <div class="bg-[#FAFAFA] mt-4 md:mt-6 overflow-x-scroll">
+            <div class="max-w-[1200px] mx-auto">
+                <div class="w-max h-20 md:h-24 py-4 flex flex-row justify-center items-center">
+                    <div class="flex flex-col justify-center items-center h-full w-max px-5 border-r">
+                        <div class="flex items-center gap-1 md:gap-2 justify-center">
+                            <span><i class="ph-fill ph-star text-yellow-400 text-lg md:text-2xl"></i></span>
+                            <span class="text-sm md:text-lg font-semibold">4.4</span>
+                        </div>
+                        <div class="text-[#00880D] w-fit text-xs md:text-base font-semibold md:font-bold text-center">
+                            <p>See reviews</p>
+                        </div>
 
+                    </div>
+                    <div class="flex flex-col justify-center h-full w-max px-5 border-r">
+                        <div class="flex flex-row items-center gap-1 justify-center">
+                            <span><i class="ph-fill ph-map-pin text-[#E52535] text-lg md:text-xl"></i></span>
+                            <span class="text-sm md:text-lg font-semibold">0.6 km</span>
+                        </div>
+                        <div>
+                            <p class="text-[#00880D] text-sm md:text-base font-semibold md:font-bold text-center">
+                                distance
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                        <div class="flex items-center justify-center">
+                            <span class="text-base md:text-lg font-semibold">$$$<span class="text-gray-500">$</span>
+                            </span>
+
+                        </div>
+                        <div>
+                            <p class="text-gray-700 text-sm md:text-base font-normal text-center">40k-100k</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                        <div class="flex items-center gap-2 justify-center">
+                            <span><i class="ph-fill ph-thumbs-up text-[#E52535] text-lg md:text-2xl"></i></span>
+                            <span class="text-sm md:text-lg font-semibold">50+ ratings</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 text-sm md:text-base font-normal text-center">Great taste</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center h-full px-5 w-fit border-r">
+                        <div class="flex items-center gap-2 justify-center">
+                            <span><i class="ph-fill ph-backpack text-[#E52535] text-lg md:text-2xl"></i></span>
+                            <span class="text-sm md:text-lg font-semibold">50+ ratings</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 text-sm md:text-base font-normal text-center">Proper packaging</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center h-full px-5 w-fit">
+                        <div class="flex items-center gap-2 justify-center">
+                            <span><i class="ph-fill ph-hamburger text-[#E52535] text-lg md:text-2xl"></i></span>
+                            <span class="text-sm md:text-lg font-semibold">50+ ratings</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 text-sm md:text-base font-normal text-center">Fair portion</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -165,7 +198,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -180,7 +213,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -195,7 +228,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -210,7 +243,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -225,7 +258,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -240,7 +273,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -255,7 +288,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -270,7 +303,7 @@
                         <div class="h-44 lg:h-56 w-full overflow-hidden rounded-xl">
                             <img src="images/product.jpeg" class="w-full">
                         </div>
-                        <div class="px-2 mt-4 mb-2">
+                        <div class="px-3 mt-4 mb-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base lg:text-xl">Dimsum Laksamana Tarung</p>
                                 <p class="font-medium text-gray-800 text-base lg:text-lg">50.000</p>
@@ -286,13 +319,13 @@
         </div>
     </section>
 
-    <section class="py-6 px-6">
+    <section class="py-6 px-6 mb-12">
         <div class="max-w-[1200px] mx-auto">
             <h2 class="text-xl md:text-2xl text-gray-800 text-left font-semibold">Menus
             </h2>
             <div class="mt-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -309,7 +342,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -326,7 +359,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -343,7 +376,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -360,7 +393,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -377,7 +410,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -394,7 +427,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -411,7 +444,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="border-b pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -428,7 +461,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
+                    <div class="pb-4 md:border md:py-4 md:px-2 md:rounded-2xl flex flex-row justify-between">
                         <div class="px-2">
                             <div class="">
                                 <p class="font-medium text-gray-800 text-base">Dimsum Laksamana Tarung</p>
@@ -502,6 +535,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var toggleMenu = document.getElementById('toggle-menu');
+
+        function openMenu() {
+            toggleMenu.classList.remove('-translate-x-full');
+            toggleMenu.classList.add('translate-x-0');
+            toggleMenu.classList.remove('opacity-50');
+            toggleMenu.classList.add('opacity-100');
+        };
+        function closeMenu() {
+            toggleMenu.classList.add('-translate-x-full');
+            toggleMenu.classList.remove('translate-x-0');
+            toggleMenu.classList.add('opacity-50');
+            toggleMenu.classList.remove('opacity-100');
+        };
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="fixed top-0 right-0 left-0 z-50 bg-[#FAFAFA]">
+        <div class="h-14 border-b px-5 md:px-7 flex flex-row items-center justify-between">
+            <div class="flex flex-row items-center">
+                <button class="mr-5 md:hidden cursor-pointer" onclick="openMenu()"><i
+                        class="ph-bold ph-list text-xl"></i>
+                </button>
+                <div class="w-28 mr-3">
+                    <img src="images/logo.png" class="w-full">
+                </div>
+                <a href="index.html"
+                    class="py-4 px-8 text-base font-semibold text-judul hidden md:block relative">Home</a>
+                <a href="#"
+                    class="py-4 px-8 text-base font-semibold text-judul hidden md:block relative before:absolute before:h-1 before:bg-[#E52535] before:w-full before:bottom-0 before:left-0">Recommendations</a>
+            </div>
+            <div class="space-x-2 lg:space-x-3 flex items-center">
+                <a class="py-2 px-3 w-fit bg-[#EAFFEA] hover:bg-[#cdffcd] rounded-full"><i
+                        class="ph-bold ph-magnifying-glass text-[#00880D] text-base"></i></a>
+                <div class="relative hidden lg:flex flex-row w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-map-pin m-auto text-xl px-4 text-red-600"></i></div>
+                    <input type="text" class="py-1.5 px-12 w-full border border-gray-400 rounded-full text-sm"
+                        placeholder="Kamu Lagi Dimana?">
+                    <div class="h-full absolute flex items-center right-0"><i
+                            class="ph ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div>
+                </div>
+                <a
+                    class="py-2 w-fit px-4 rounded-full bg-[#EAFFEA] text-[#00880D] hover:bg-[#cdffcd] font-semibold text-base hidden md:block">Login/Sign
+                    Up</a>
+            </div>
+        </div>
+        <div class="h-14 px-5 md:px-7 flex flex-row items-center justify-between lg:hidden">
+            <div class="w-full flex flex-row justify-between items-center">
+                <p class="hidden md:block text-sm font-normal text-gray-500">Curious what's in other locations? Change
+                    it
+                    up.</p>
+                <div class="relative flex flex-row w-full md:w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-map-pin m-auto text-xl px-4 text-red-600"></i></div>
+                    <input type="text"
+                        class="py-1.5 px-12 w-full border border-gray-400 rounded-full text-sm lg:text-base"
+                        placeholder="Kamu Lagi Dimana?">
+                    <div class="h-full absolute flex items-center right-0"><i
+                            class="ph ph-caret-down m-auto text-xl px-4 text-[#00880D]"></i></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="toggle-menu"
+        class="flex md:hidden w-full h-full fixed top-0 left-0 bg-white z-50 py-12 px-8 -translate-x-full transition duration-500 opacity-50">
+        <div class="relative">
+            <span onclick="closeMenu()" class="absolute top-0 -right-3/4 cursor-pointer"><i
+                    class="ph ph-x text-2xl font-semibold text-gray-400"></i></span>
+            <div class="w-28">
+                <img src="images/logo.png" class="w-full">
+            </div>
+            <div class="text-[#00880D] w-full font-semibold text-lg flex flex-col mt-12">
+                <a href="#" class="py-2 px-3 w-full">Home</a>
+                <a href="#" class="py-2 px-3 w-full">Recommendations</a>
+                <a href="#" class="py-2 px-3 w-full">Privacy policy</a>
+                <a href="#" class="py-2 px-3 w-full">Terms of service</a>
+                <a href="#" class="py-2 px-3 w-full">Download on App Store</a>
+                <a href="#" class="py-2 px-3 w-full">Log in/Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="mt-28 lg:mt-14 p-3">
+        <div class="w-full h-80 lg:h-96 relative">
+            <div class="w-full h-full rounded-xl overflow-hidden">
+                <img src="images/rec-hero.jpg" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full h-full absolute flex items-center px-7 md:px-16 lg:px-7 top-0">
+                <div class="w-full max-w-[1200px] h-fit mx-auto flex items-center">
+                    <div class="w-96 h-fit text-white">
+                        <h2 class="text-3xl lg:text-4xl font-semibold">Recommendations</h2>
+                        <p class="text-sm lg:text-base mt-5">Explore our curated recommendations based on your various
+                            needs
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10">
+        <div class="py-6 w-full">
+            <div class="w-full max-w-[1200px] mx-auto flex flex-row gap-3 text-sm text-gray-700">
+                <a href="#">Home</a>
+                <span>/</span>
+                <a href="#">Recommendations</a>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/map.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">Near me</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/best-seller.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">Best seller</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/hen.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">Budget meal</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/love.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">Most love</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/wall-clock.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">24 hours</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/vegetable.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">Healthy food</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-row justify-start items-center gap-3 my-14">
+                    <div class="w-8 md:w-11 aspect-square">
+                        <img src="images/discount.png" class="w-full object-cover">
+                    </div>
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold">Pasti ada promo</h3>
+                </div>
+                <div class="grid grid-cols-1 w-full h-fit md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/sostang.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.5</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Sostang Negara</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Street food</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.9 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/ayam-bakar.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Ayam Bakar Gantari</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Ayam</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>5.0 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/baso-aci.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">3.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <!-- <div>
+                                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                                        </div> -->
+                                        <span class="text-xs lg:text-sm">Open</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Bakso Aci Edi</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Bakso</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>0.11 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="product.html">
+                        <div
+                            class="card border-b md:border md:hover:border-white transition md:hover:shadow-2xl md:rounded-xl">
+                            <div class="w-full h-full flex flex-row lg:flex-col justify-start py-4 md:py-2 md:p-2">
+                                <div
+                                    class="flex justify-center items-center w-32 h-40 lg:w-full lg:h-56 overflow-hidden rounded-xl relative">
+                                    <img src="images/es-mangga.jpeg" class="w-full">
+                                    <div
+                                        class="absolute bottom-1 right-9 lg:right-1 lg:bottom-1 px-1.5 lg:px-2 bg-white rounded-full flex w-fit h-fit items-center gap-1 lg:gap-1.5">
+                                        <span><i
+                                                class="ph-fill ph-star text-yellow-400 text-sm lg:text-base"></i></span>
+                                        <span class="text-xs lg:text-sm">4.7</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white py-3 pl-3 pr-6 h-auto">
+                                    <div class="flex flex-row items-center gap-2 mb-0">
+                                        <div>
+                                            <i class="ph-fill ph-clock text-sm text-red-600"></i>
+                                        </div>
+                                        <span class="text-xs lg:text-sm">Closed</span>
+                                    </div>
+                                    <h6 class="text-base font-semibold mb-0">Manggo Float</h6>
+                                    <h6 class="text-xs font-light text-slate-400 mb-2">Es krim</h6>
+                                    <div class="flex items-center gap-2 text-xs mb-4">
+                                        <i class="ph-fill ph-map-pin text-sm lg:text-base text-red-600 pb-1"></i>
+                                        <span>2.45 km</span>
+                                        <span>|</span>
+                                        <span>$$$$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center mt-8">
+                    <a href="#"
+                        class="bg-[#EAFFEA] text-[#00880D] text-sm md:text-base py-2 px-4 rounded-full font-semibold cursor-pointer w-full md:w-fit hover:bg-[#cdffcd] text-center">
+                        Show all restos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 lg:py-16 px-6 bg-[#E52535]">
+        <div class="flex flex-wrap relative max-w-5xl mx-auto text-white justify-center gap-12 md:justify-between">
+            <div class="w-full md:w-1/2 lg:w-3/5 h-fit ">
+                <div class="w-40"><img src="images/gofood-white.png" class="w-full"></div>
+                <p class="py-5 text-lg md:text-xl lg:text-2xl font-semibold">It's like having the intire neighborhood's
+                    kitchen in
+                    your pocket</p>
+                <p class="text-sm lg:text-base pt-3 pb-8 font-light">Enjoy a large variety of meals, deals, and
+                    member-only
+                    features in GoFood
+                    app.</p>
+                <div class="flex flex-row gap-4">
+                    <div class="w-36 lg:w-56 rounded lg:rounded-xl overflow-hidden border"><img
+                            src="images/play-store.jpeg" class=w-full">
+                    </div>
+                    <div class="w-36 lg:w-56 rounded lg:rounded-xl overflow-hidden border"><img
+                            src="images/app-store.jpeg" class="w-full">
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-[400px] md:w-[255px] lg:w-[350px] ">
+                <img src="images/mockup-gf.png" class="w-full h-auto">
+            </div>
+            <div class="md:absolute md:bottom-0 md:w-1/2 lg:w-3/5 ">
+                <div class="relative flex flex-row max-w-[400px] md:w-[300px] lg:w-80">
+                    <div class="h-full absolute flex items-center left-0"><i
+                            class="ph-fill ph-translate m-auto text-xl px-4 text-red-600"></i></div>
+                    <select
+                        class="py-2 px-11 w-full border rounded-full text-sm text-slate-400 font-light lg:text-base ">
+                        <option value="indonesia">Bahasa Indonesia</option>
+                        <option value="english">English</option>
+                    </select>
+                </div>
+                <div class="w-full flex flex-wrap mt-8 gap-y-6 gap-x-8 lg:gap-x-16 text-base font-medium">
+                    <a href="">Pivacy policy</a>
+                    <a href="">Terms of service</a>
+                    <a href="" class="flex space-x-2"><span>Follow us</span><i
+                            class="ph ph-instagram-logo text-2xl -mt-1"></i></a>
+                </div>
+                <div class="w-full mt-6">
+                    <p class="text-sm font-light">&copy; 2024 Gojek | Gojek is a trademark of PT Aplikasi Karya Anak
+                        Bangsa.
+                        Registered in the
+                        Directorate General of
+                        Intellectual Property of the Republic of Indonesia.</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        var toggleMenu = document.getElementById('toggle-menu');
+
+        function openMenu() {
+            toggleMenu.classList.remove('-translate-x-full');
+            toggleMenu.classList.add('translate-x-0');
+            toggleMenu.classList.remove('opacity-50');
+            toggleMenu.classList.add('opacity-100');
+        };
+        function closeMenu() {
+            toggleMenu.classList.add('-translate-x-full');
+            toggleMenu.classList.remove('translate-x-0');
+            toggleMenu.classList.add('opacity-50');
+            toggleMenu.classList.remove('opacity-100');
+        };
+    </script>
+</body>
+
+</html>
